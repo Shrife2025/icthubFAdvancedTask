@@ -98,7 +98,6 @@ nav ul li a {
   color: var(--blue);
 }
 header {
-  min-height: 100vh;
   justify-content: start;
   flex-direction: column;
     padding-top: 200px;
@@ -114,6 +113,7 @@ header {
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
+    margin: 100px 0;
 }
 header h1 {
   font-weight: 900;
@@ -169,7 +169,6 @@ header h1:last-of-type {
 .need {
   padding-top: 100px;
   width: 100%;
-  min-height: 100vh;
     justify-content: start;
   flex-direction: column;
   font-family:
@@ -184,6 +183,8 @@ header h1:last-of-type {
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
+        margin: 100px 0;
+
 }
 .cards {
   width: 80%;
@@ -216,11 +217,12 @@ header h1:last-of-type {
 
 .about {
   width: 100%;
-  min-height: 100vh;
   padding-top: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+      margin: 100px 0;
+
 }
 .stats-container {
   display: flex;
@@ -254,11 +256,12 @@ header h1:last-of-type {
 
 .feedback {
   width: 100%;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+      margin: 100px 0;
+
 }
 .feedback .top {
   display: flex;
