@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Form Validation</title>
+
+    <link rel="stylesheet" href="/dark.css">
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+form {
+    width: 400px;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-title h2 {
+    color: #222;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.form-title p {
+    color: #888;
+    font-size: 14px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.inputs {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e5e5e5;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.inputs:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.12);
+}
+
+.messages {
+    min-height: 18px;
+    margin-top: 6px;
+    color: #e74c3c;
+    font-size: 13px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+@media (max-width: 450px) {
+    form {
+        width: 90%;
+        padding: 25px;
+    }
+}
+</style>
+<body>
+
+ 
+<form>
+
+    <div class="form-title">
+        <h2>Contact Us</h2>
+        <p>Fill in your information</p>
+    </div>
+
+    <div class="form-group">
+        <label for="name">Full Name</label>
+
+        <input
+            id="name"
+            type="text"
+            name="Name"
+            class="inputs"
+            placeholder="Enter your full name"
+        >
+
+        <p class="messages" style="text-align: left;"></p>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+
+        <input
+            id="email"
+            type="text"
+            name="Email"
+            class="inputs"
+            placeholder="Enter your email"
+        >
+
+        <p class="messages" style="text-align: left;"></p>
+    </div>
+
+    <button type="button" onclick="checkInputs()">
+        Submit
+    </button>
+
+</form>
+
+
+
+    <script >
+
+        
+let inputs = document.getElementsByClassName("inputs");
+let messages = document.getElementsByClassName("messages");
+
+function checkInputs() {
+
+    let valid = true;
+
+    for (let i = 0; i < inputs.length; i++) {
+
+        if (inputs[i].value.trim() === "") {
+            messages[i].innerText = `${inputs[i].name} is required`;
+            valid = false;
+            break;
+        }
+
+        else if (i == 1 && !inputs[i].value.includes("@")) {
+            messages[i].innerText = `${inputs[i].name} must contain @`;
+            valid = false;
+            break;
+        }
+
+        else if (i == 0 && inputs[i].value.trim().split(/\s+/).length < 2) {
+            messages[i].innerText = `${inputs[i].name} must contain 2 words`;
+            valid = false;
+            break;
+        }
+
+        else {
+            messages[i].innerText = "";
+        }
+    }
+
+    if (valid) {
+        alert("Message submitted successfully");
+    }
+}
+    </script>
+
+</body>
+</html>
+
