@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/images/Nexify.png" />
-    <link rel="stylesheet" href="/index.css" />
+    <link rel="stylesheet" href="/dark.css" id="style"/>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -40,11 +40,15 @@
         <a href="" id="start"
           ><i class="fa-solid fa-user-plus"></i> Get Started</a
         >
+        <button  class="theme-toggle">
+  <i id="themeToggle" class="fa-solid fa-sun"></i>
+</button>
       </ul>
     </nav>
     <header>
-      <h1>
-        <i class="fa-solid fa-bolt" style="color: #4f46e5"></i> Build faster.
+      <h1 >
+        <i class="fa-solid fa-bolt" style="color: #4f46e5" ></i>
+        <span id="counteredWord"></span>
       </h1>
       <h1>Scale smarter.</h1>
       <p>
@@ -117,12 +121,17 @@
 
         <p>Join thousands of teams building with Nexify.</p>
 
-        <a href="#">
+        <a href="./form.html">
           <i class="fa-solid fa-arrow-right"></i>
-          Get Started Now
+          Register Now
         </a>
       </article>
     </section>
+    <section>
+      
+    </section>
+      <button id="scroll"><i class="fa-solid fa-circle-arrow-up"></i></button>
+
   <footer>
   <article>
     <i class="fa-brands fa-twitter"></i>
@@ -132,6 +141,7 @@
   </article>
 
   <p>© 2025 Nexify. All rights reserved.</p>
+  
  </footer>
     <script src="/index.js"></script>
   </body>
